@@ -1,0 +1,18 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int countDigits(int n){
+    int dup = n;  
+    int cnt = 0;
+
+    while(n != 0) {
+        int digit = n % 10;  
+        n = n / 10;  
+
+        if(digit != 0 && dup % digit == 0) {
+            cnt++;
+        }
+    }
+
+    return cnt;  
+}
