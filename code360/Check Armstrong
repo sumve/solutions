@@ -1,0 +1,25 @@
+bool checkArmstrong(int n){
+	bool arm = false;
+	int numDigits = 0;
+    int dup = n;
+	while(dup != 0){
+		numDigits++;
+		dup=dup/10;
+	}
+
+	dup = n;
+
+    int sum = 0;
+    while(dup != 0){
+        int ld=dup%10;
+        dup=dup/10;
+        sum = sum + pow(ld, numDigits);       
+    }
+        if(n==sum){
+            arm = true;
+        }else{
+            arm = false;
+        }
+    
+    return arm;
+}
